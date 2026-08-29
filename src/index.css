@@ -66,10 +66,6 @@ a {
 .card {
   width: min(96vw, 790px);
 
-  /*
-    Height content પ્રમાણે રહે.
-    એટલે નીચે unwanted blank space નહીં આવે.
-  */
   height: auto;
 
   max-height: 98dvh;
@@ -79,7 +75,7 @@ a {
   border: 1.5px solid #2862bd;
   border-radius: 18px;
 
-  padding: 10px 10px 8px;
+  padding: 9px 9px 7px;
 
   overflow: hidden;
 
@@ -103,8 +99,8 @@ a {
 
 
 .eyeLogoWrap {
-  width: 165px;
-  height: 76px;
+  width: 155px;
+  height: 70px;
 
   margin: 0 auto 2px;
 
@@ -129,7 +125,7 @@ a {
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 30px;
+  font-size: 28px;
 
   line-height: 1.05;
 
@@ -168,7 +164,7 @@ a {
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 600;
 
@@ -183,7 +179,7 @@ a {
 .infoBox {
   flex: 0 0 auto;
 
-  margin-top: 9px;
+  margin-top: 8px;
 
   display: grid;
 
@@ -202,7 +198,7 @@ a {
 .locationInfo {
   min-width: 0;
 
-  padding: 10px 9px;
+  padding: 8px 8px 8px 8px;
 
   position: relative;
 }
@@ -231,15 +227,36 @@ a {
 
   align-items: flex-start;
 
-  gap: 8px;
+  gap: 6px;
 }
 
 
 .blueIcon {
   flex: 0 0 auto;
 
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
+}
+
+
+.locationLabel {
+  display: inline-block;
+
+  margin-bottom: 5px;
+
+  padding-bottom: 3px;
+
+  border-bottom: 2px solid #0a4eb2;
+
+  color: #0a4eb2;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
 }
 
 
@@ -248,7 +265,7 @@ a {
 
   color: #08419c;
 
-  font-size: 17px;
+  font-size: 18px;
 
   line-height: 1;
 
@@ -261,7 +278,7 @@ a {
 
   color: #161616;
 
-  font-size: 11.5px;
+  font-size: 12px;
 
   line-height: 1.42;
 }
@@ -283,8 +300,8 @@ a {
 
 
 .contactItem .blueIcon {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
 }
 
 
@@ -293,7 +310,7 @@ a {
 
   color: #082e73;
 
-  font-size: 18px;
+  font-size: 19px;
 
   line-height: 1.05;
 
@@ -318,7 +335,7 @@ a {
 
 
 .contactItem.website strong {
-  font-size: 11px;
+  font-size: 12px;
 
   color: #0a418e;
 
@@ -344,14 +361,14 @@ a {
 
   justify-content: flex-start;
 
-  padding: 5px 7px 5px;
+  padding: 4px 5px 4px;
 }
 
 
 .mapTitle {
   width: 100%;
 
-  max-width: 172px;
+  max-width: 168px;
 
   background: linear-gradient(
     180deg,
@@ -363,11 +380,11 @@ a {
 
   text-align: center;
 
-  padding: 8px 5px;
+  padding: 7px 5px;
 
   border-radius: 9px;
 
-  font-size: 16px;
+  font-size: 15px;
 
   font-weight: 800;
 }
@@ -386,6 +403,29 @@ a {
 }
 
 
+.mapLink {
+  display: block;
+
+  width: 100%;
+
+  max-width: 138px;
+
+  margin: 6px auto 0;
+}
+
+
+.mapImage {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 6px 12px rgba(10, 47, 114, 0.18));
+}
+
+
 .mapsLogo {
   width: 78px;
   height: 94px;
@@ -400,20 +440,20 @@ a {
 .mapButton {
   width: 100%;
 
-  max-width: 184px;
+  max-width: 164px;
+
+  display: flex;
+
+  align-items:54px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 6px;
+  gap: 5px;
 
-  padding: 8px 5px;
-
-  border-radius: 8px;
-
-  background: linear-gradient(
+  padding: 5px 4near-gradient(
     180deg,
     #2d5fac,
     #194887
@@ -609,28 +649,9 @@ a {
   width: 31px;
   height: 31px;
 
-  border-radius: 50%;
+  display: block;
 
-  background: #1769c2;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  justify-content: center;
-}
-
-
-.facebookLogo span {
-  color: white;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 26px;
-
-  font-weight: 800;
-
-  line-height: 28px;
+  object-fit: contain;
 }
 
 
@@ -642,65 +663,9 @@ a {
   width: 31px;
   height: 31px;
 
-  border-radius: 9px;
+  display: block;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f9ce34,
-      #ee2a7b,
-      #6228d7
-    );
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-
-.instagramInner {
-  width: 20px;
-  height: 20px;
-
-  border: 2px solid white;
-
-  border-radius: 6px;
-
-  position: relative;
-}
-
-
-.instagramInner::before {
-  content: "";
-
-  position: absolute;
-
-  width: 7px;
-  height: 7px;
-
-  border: 2px solid white;
-
-  border-radius: 50%;
-
-  left: 4.5px;
-  top: 4.5px;
-}
-
-
-.instagramInner span {
-  position: absolute;
-
-  width: 3px;
-  height: 3px;
-
-  background: white;
-
-  border-radius: 50%;
-
-  right: 2px;
-  top: 2px;
+  object-fit: contain;
 }
 
 
@@ -712,24 +677,9 @@ a {
   width: 38px;
   height: 27px;
 
-  border-radius: 7px;
+  display: block;
 
-  background: #ff0808;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-
-.youtubeLogo span {
-  color: white;
-
-  font-size: 14px;
-
-  margin-left: 2px;
+  object-fit: contain;
 }
 
 
@@ -780,7 +730,7 @@ a {
 
   margin-top: 8px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   overflow: hidden;
 
@@ -790,15 +740,9 @@ a {
 
   justify-content: center;
 
-  background: #062b70;
+
 }
 
-
-/*
-  IMPORTANT:
-  હવે footerનું આખું design image છે.
-  એટલે જૂના .footerTitle અને .footerLineની જરૂર નથી.
-*/
 
 .footerBanner {
   width: 100%;
@@ -823,7 +767,7 @@ a {
 
   margin-top: 6px;
 
-  border-radius: 8px;
+  
 
   background: #eaf3ff;
 
@@ -840,6 +784,9 @@ a {
   font-weight: 800;
 
   letter-spacing: 0.2px;
+
+
+  box-shadow: none;
 }
 
 
@@ -915,6 +862,11 @@ a {
   }
 
 
+  .mapLink {
+    max-width: 148px;
+  }
+
+
   .mapButton {
     font-size: 10.5px;
   }
@@ -929,6 +881,22 @@ a {
     height: 68px;
 
     margin-top: 7px;
+  }
+
+
+  .footerLogoWrap {
+    width: 56px;
+    height: 56px;
+  }
+
+
+  .footerTitle {
+    font-size: 18px;
+  }
+
+
+  .footerSubtitle {
+    font-size: 13px;
   }
 
 
@@ -1109,7 +1077,25 @@ a {
 
     margin-top: 6px;
 
-    border-radius: 9px;
+    border-radius: 11px;
+  }
+
+
+  .footerLogoWrap {
+    width: 46px;
+    height: 46px;
+
+    margin-right: 6px;
+  }
+
+
+  .footerTitle {
+    font-size: 13px;
+  }
+
+
+  .footerSubtitle {
+    font-size: 9px;
   }
 
 
