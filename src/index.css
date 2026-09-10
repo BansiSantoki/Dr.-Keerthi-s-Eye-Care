@@ -64,6 +64,10 @@ img {
   padding: 0;
 }
 
+.pageFrame {
+  max-height: 100%;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -418,41 +422,151 @@ img {
 
   .pageFrame,
   .card {
-    width: 390px;
-    max-width: 390px;
-    min-width: 390px;
+    width: min(100%, 380px);
+    max-width: 380px;
     gap: 4px;
     margin: 0 auto;
   }
 
-  .brandLogo {
-    width: min(100%, 260px);
+  .brandLogoDirect {
+    width: clamp(210px, 52vw, 260px);
+    max-width: 260px;
   }
 
   .contactGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 0;
   }
 
   .contactColumnLeft {
-    padding: 10px 12px 8px;
+    padding: 8px 8px 6px 10px;
   }
 
   .contactColumnRight {
-    border-left: none;
-    border-top: 1px dashed #b8c9e6;
-    padding-top: 14px;
-    width: 100%;
+    border-left: 1px dashed #b8c9e6;
+    padding: 8px 8px 6px;
+    width: auto;
+  }
+
+  .contactIconBadge,
+  .blueIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .contactIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sectionHeading {
+    font-size: clamp(13px, 3.3vw, 16px);
+  }
+
+  .contactAddress {
+    font-size: clamp(10px, 2.6vw, 12px);
+    line-height: 1.3;
+  }
+
+  .contactDivider {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+  }
+
+  .contactPrimary {
+    font-size: clamp(13px, 3.4vw, 16px);
+  }
+
+  .contactSecondary {
+    font-size: clamp(8px, 2vw, 10px);
+  }
+
+  .mapsTopButton,
+  .mapsActionButton {
+    max-width: 150px;
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .mapsVisual {
+    width: min(100%, 150px);
+  }
+
+  .mapsHelpText {
+    font-size: 6px;
   }
 
   .socialGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
   }
 
   .socialCard {
-    height: 68px;
+    height: 58px;
+    padding: 4px 3px 3px;
+  }
+
+  .socialIconShell {
+    width: 22px;
+    height: 22px;
+  }
+
+  .socialIcon,
+  .facebookLogo,
+  .instagramLogo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .youtubeLogo {
+    width: 28px;
+    height: 18px;
+  }
+
+  .socialName,
+  .socialCard strong {
+    font-size: 7px;
+  }
+
+  .socialButton {
+    font-size: 5px;
+    padding: 3px 2px;
+  }
+
+  .connectSeparatorPill {
+    font-size: 7px;
+    padding: 4px 8px;
   }
 
   .promoBannerWrap {
     border-radius: 10px;
+  }
+
+  .footerStrip {
+    font-size: 7px;
+    padding: 7px 8px;
+  }
+}
+
+@media (max-height: 850px) {
+  .pageFrame,
+  .card {
+    transform: scale(0.96);
+    transform-origin: center center;
+  }
+}
+
+@media (max-height: 760px) {
+  .pageFrame,
+  .card {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-height: 680px) {
+  .pageFrame,
+  .card {
+    transform: scale(0.82);
   }
 }
