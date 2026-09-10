@@ -1,21 +1,11 @@
-/**
- * SINGLE SOURCE OF TRUTH FOR EVERY LINK ON THE CARD.
- * Replace the three social URLs below with the official pages.
- */
-export const FACEBOOK_URL = 'PASTE_FACEBOOK_URL_HERE';
-export const INSTAGRAM_URL = 'PASTE_INSTAGRAM_URL_HERE';
-export const YOUTUBE_URL = 'PASTE_YOUTUBE_URL_HERE';
-
-export const MAPS_QUERY =
-'4th Floor, JJ Makuta Building, Metro Pillar Number C963, At Metro Station NGRT, Habsiguda Main Road, Hyderabad, 500007';
-
 export const LINKS = {
   phone: 'tel:+917670811451',
-  website: 'https://drkeerthiseyecare.com',
-  maps: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`,
-  facebook: FACEBOOK_URL,
-  instagram: INSTAGRAM_URL,
-  youtube: YOUTUBE_URL
+  website: 'https://www.drkeerthiseyecare.com/lander',
+  maps: 'https://maps.app.goo.gl/sbxDWJd1F4TLJFLeA?g_st=awb',
+  facebook:
+    'https://www.facebook.com/people/Dr-Keerthi-Bavandla/61576515153183/',
+  instagram: 'https://www.instagram.com/drkeerthibavandla',
+  youtube: 'https://www.youtube.com/@Dr.KeerthiBavandla'
 };
 
 export const CLINIC = {
@@ -24,10 +14,11 @@ export const CLINIC = {
   phoneDisplay: '767 0811 451',
   websiteDisplay: 'www.drkeerthiseyecare.com',
   address: [
-  '4th Floor, JJ Makuta Building,',
-  'Metro Pillar Number: C963,',
-  'At Metro Station NGRT,',
-  'Habsiguda Main Rd,',
-  'Hyderabad, 500007']
-
+    'Above Bandhan bank,',
+    '4th floor, JJ Makuta building,',
+    'NGRI Metro station,',
+    'Street 7,',
+    'Habsiguda,',
+    'Hyderabad-07'
+  ]
 };

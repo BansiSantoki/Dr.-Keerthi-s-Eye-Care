@@ -1,116 +1,141 @@
-import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaGlobe } from 'react-icons/fa';
-import { GoogleMapsPin } from './GoogleMapsPin';
 import { CLINIC, LINKS } from '../data/links';
 
-function Badge({ children }: {children: React.ReactNode;}) {
-  return (
-    <span className="flex h-[calc(var(--u)*9)] w-[calc(var(--u)*9)] shrink-0 items-center justify-center rounded-full bg-royal text-[calc(var(--u)*4.4)] text-white">
-      {children}
-    </span>);
+function IconBadge({ children }: { children: React.ReactNode }) {
+  return <span className="contactIconBadge">{children}</span>;
+}
 
+function LocationIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="contactIcon" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#0d55c7" />
+      <path
+        d="M32 13c-10 0-18 8-18 18 0 13 18 25 18 25s18-12 18-25c0-10-8-18-18-18z"
+        fill="#ffffff"
+      />
+      <circle cx="32" cy="30" r="6" fill="#0d55c7" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="contactIcon" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#0d55c7" />
+      <path
+        d="M22 18c1.7-1.7 4.5-1.7 6.2 0l4.3 4.3c1.5 1.5 1.8 3.9.7 5.7l-2.2 3.7c2.7 5 6.4 8.7 11.4 11.4l3.7-2.2c1.8-1.1 4.2-.8 5.7.7l4.3 4.3c1.7 1.7 1.7 4.5 0 6.2l-2.8 2.8c-1.9 1.9-4.7 2.7-7.4 2.1-7.8-1.7-14.7-5.9-20.4-11.5-5.7-5.7-9.8-12.6-11.5-20.4-.6-2.7.2-5.5 2.1-7.4L22 18Z"
+        fill="#ffffff"
+      />
+    </svg>
+  );
+}
+
+function GlobeIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="contactIcon" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="#0d55c7" />
+      <circle cx="32" cy="32" r="18" fill="none" stroke="#ffffff" strokeWidth="4" />
+      <path d="M14 32h36" stroke="#ffffff" strokeWidth="4" strokeLinecap="round" />
+      <path d="M32 14c6 5 9 11 9 18s-3 13-9 18c-6-5-9-11-9-18s3-13 9-18Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+      <path d="M32 14c-6 5-9 11-9 18s3 13 9 18c6-5 9-11 9-18s-3-13-9-18Z" fill="none" stroke="#ffffff" strokeWidth="4" />
+    </svg>
+  );
+}
+
+function Divider() {
+  return <span className="contactDivider" aria-hidden="true" />;
 }
 
 export function LocationSection() {
   return (
-    <section
-      aria-label="Location and contact"
-      className="mt-[calc(var(--u)*3)] rounded-[calc(var(--u)*3)] border border-hairline px-[calc(var(--u)*3)] py-[calc(var(--u)*3)]">
-      
-      <div className="grid grid-cols-[1.35fr_1fr] gap-[calc(var(--u)*3)]">
-        {/* LEFT */}
-        <div className="flex flex-col">
-          <a
-            href={LINKS.maps}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start gap-[calc(var(--u)*2.5)] transition-colors duration-150 ease-out hover:text-royal">
-            
-            <Badge>
-              <FaMapMarkerAlt />
-            </Badge>
-            <span className="block">
-              <span className="block text-[calc(var(--u)*5)] font-700 leading-none text-royal">
-                Locate us at
-              </span>
-              <span className="mt-[calc(var(--u)*1.4)] block text-[calc(var(--u)*3.6)] font-500 leading-[1.45] text-navy">
-                {CLINIC.address.map((line) =>
-                <span key={line} className="block">
-                    {line}
-                  </span>
-                )}
-              </span>
+    <section className="contactCard" aria-label="Location and contact">
+      <div className="contactGrid">
+        <div className="contactColumn contactColumnLeft">
+          <div className="contactLead">
+            <IconBadge>
+              <LocationIcon />
+            </IconBadge>
+
+            <div className="contactCopy">
+              <h2 className="sectionHeading">Locate us at</h2>
+              <address className="contactAddress">
+                {CLINIC.address.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </address>
+            </div>
+          </div>
+
+          <Divider />
+
+          <a className="contactRow" href={LINKS.phone} aria-label={`Call ${CLINIC.phoneDisplay}`}>
+            <IconBadge>
+              <PhoneIcon />
+            </IconBadge>
+
+            <span className="contactCopy">
+              <strong className="contactPrimary">{CLINIC.phoneDisplay}</strong>
+              <span className="contactSecondary">Tap to Call</span>
             </span>
           </a>
 
-          <span className="my-[calc(var(--u)*2.4)] ml-[calc(var(--u)*11.5)] h-px bg-hairline" />
+          <Divider />
 
           <a
-            href={LINKS.phone}
-            className="flex items-center gap-[calc(var(--u)*2.5)]"
-            aria-label={`Call ${CLINIC.phoneDisplay}`}>
-            
-            <Badge>
-              <FaPhoneAlt />
-            </Badge>
-            <span className="block">
-              <span className="block text-[calc(var(--u)*6.2)] font-800 leading-none text-royal">
-                {CLINIC.phoneDisplay}
-              </span>
-              <span className="mt-[calc(var(--u)*1)] block text-[calc(var(--u)*3.4)] font-500 leading-none text-navy">
-                Tap to Call
-              </span>
-            </span>
-          </a>
-
-          <span className="my-[calc(var(--u)*2.4)] ml-[calc(var(--u)*11.5)] h-px bg-hairline" />
-
-          <a
+            className="contactRow"
             href={LINKS.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-[calc(var(--u)*2.5)]">
-            
-            <Badge>
-              <FaGlobe />
-            </Badge>
-            <span className="block">
-              <span className="block text-[calc(var(--u)*3.9)] font-700 leading-none text-royal underline decoration-royal/40 underline-offset-2">
-                {CLINIC.websiteDisplay}
-              </span>
-              <span className="mt-[calc(var(--u)*1)] block text-[calc(var(--u)*3.4)] font-500 leading-none text-navy">
-                Tap to Visit Website
-              </span>
+            aria-label="Open clinic website"
+          >
+            <IconBadge>
+              <GlobeIcon />
+            </IconBadge>
+
+            <span className="contactCopy">
+              <strong className="contactPrimary contactPrimaryLink">{CLINIC.websiteDisplay}</strong>
+              <span className="contactSecondary">Tap to Visit Website</span>
             </span>
           </a>
         </div>
 
-        {/* RIGHT */}
-        <div className="flex flex-col items-center border-l border-dashed border-[#9db6e8] pl-[calc(var(--u)*3)]">
-          <span className="w-full rounded-[calc(var(--u)*2)] bg-[#2b4f86] py-[calc(var(--u)*1.8)] text-center text-[calc(var(--u)*4.6)] font-700 leading-none text-white">
-            Google Maps
-          </span>
-
+        <div className="contactColumn contactColumnRight">
           <a
+            className="mapsTopButton"
             href={LINKS.maps}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open clinic location in Google Maps"
-            className="mt-[calc(var(--u)*1.5)] flex flex-col items-center">
-            
-            <GoogleMapsPin />
-            <span className="mt-[calc(var(--u)*1.5)] flex w-full items-center justify-center gap-[calc(var(--u)*1.5)] rounded-[calc(var(--u)*2)] bg-navy px-[calc(var(--u)*2)] py-[calc(var(--u)*1.7)] text-[calc(var(--u)*3.5)] font-600 leading-none text-white transition-colors duration-150 ease-out hover:bg-royal">
-              <FaMapMarkerAlt className="text-[calc(var(--u)*3.6)]" />
-              Open in Google Maps
-            </span>
-            <span className="mt-[calc(var(--u)*1.8)] block text-center text-[calc(var(--u)*3.3)] font-500 leading-[1.4] text-navy">
-              Tap to open location
-              <br />
-              in Google Maps
-            </span>
+          >
+            Google Maps
           </a>
+
+          <a
+            className="mapsVisualLink"
+            href={LINKS.maps}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open clinic location in Google Maps"
+          >
+            <img src="/location.png" alt="Google Maps location pin" className="mapsVisual" />
+          </a>
+
+          <a
+            className="mapsActionButton"
+            href={LINKS.maps}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open clinic location in Google Maps"
+          >
+            Open in Google Maps
+          </a>
+
+          <p className="mapsHelpText">
+            Tap to open location
+            <br />
+            in Google Maps
+          </p>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
