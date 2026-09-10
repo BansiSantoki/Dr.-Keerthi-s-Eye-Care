@@ -422,14 +422,14 @@ img {
 
   .pageFrame,
   .card {
-    width: min(100%, 380px);
+    width: min(94vw, 380px);
     max-width: 380px;
     gap: 4px;
     margin: 0 auto;
   }
 
   .brandLogoDirect {
-    width: clamp(210px, 52vw, 260px);
+    width: clamp(200px, 52vw, 260px);
     max-width: 260px;
   }
 
@@ -549,10 +549,10 @@ img {
   }
 }
 
-@media (max-height: 850px) {
+@media (max-height: 860px) {
   .pageFrame,
   .card {
-    transform: scale(0.96);
+    transform: scale(0.95);
     transform-origin: center center;
   }
 }
@@ -560,13 +560,13 @@ img {
 @media (max-height: 760px) {
   .pageFrame,
   .card {
-    transform: scale(0.9);
+    transform: scale(0.88);
   }
 }
 
 @media (max-height: 680px) {
   .pageFrame,
   .card {
-    transform: scale(0.82);
+    transform: scale(0.8);
   }
 }
