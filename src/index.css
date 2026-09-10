@@ -404,21 +404,22 @@ img {
   html,
   body,
   #root {
-    overflow: hidden !important;
+    overflow: auto !important;
   }
 
   .page,
   .pageShell {
     min-height: 100dvh;
-    height: 100dvh;
-    align-items: center;
-    padding: 6px 6px 8px;
+    height: auto;
+    align-items: flex-start;
+    padding: 10px 8px 14px;
   }
 
   .pageFrame,
   .card {
     width: min(100%, 390px);
     gap: 4px;
+    max-width: 390px;
   }
 
   .brandLogo {
@@ -429,10 +430,15 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .contactColumnLeft {
+    padding: 10px 12px 8px;
+  }
+
   .contactColumnRight {
     border-left: none;
     border-top: 1px dashed #b8c9e6;
     padding-top: 14px;
+    width: 100%;
   }
 
   .socialGrid {
